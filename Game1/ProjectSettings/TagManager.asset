@@ -13,10 +13,10 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
-  - 
+  - Enemy
+  - Enemy Hp Bar
+  - Ground
+  - Bullet
   - 
   - 
   - 
@@ -40,4 +40,16 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Base Layer
+    uniqueID: 3116321777
+    locked: 0
+  - name: Details
+    uniqueID: 2485385139
+    locked: 0
+  - name: Entities
+    uniqueID: 3643552873
+    locked: 0
+  - name: Aux Details
+    uniqueID: 48117587
     locked: 0

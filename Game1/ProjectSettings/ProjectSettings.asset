@@ -619,7 +619,10 @@ PlayerSettings:
       daydreamIconForeground: {fileID: 0}
       daydreamIconBackground: {fileID: 0}
   cloudServicesEnabled:
-    Collab: 0
+    Build: 0
+    Collab: 1
+    ErrorHub: 0
+    Hub: 0
     UNet: 1
   luminIcon:
     m_Name: 
@@ -633,10 +636,10 @@ PlayerSettings:
     m_VersionCode: 1
     m_VersionName: 
   apiCompatibilityLevel: 6
-  cloudProjectId: 40734d61-62af-41cc-8291-4036d94b0687
+  cloudProjectId: 30372a49-ec3c-45b2-88b1-1b7074b3cbf5
   framebufferDepthMemorylessMode: 0
   projectName: Game1
-  organizationId: nature_elf
+  organizationId: 2020sp-475-game
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
   disableOldInputManagerSupport: 0
