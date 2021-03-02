@@ -5,6 +5,7 @@ using UnityEngine;
 public class Shotgun : Weapon
 {
     public int pelletCount = 5;
+    
     public override void _Fire()
     {
         Transform spawn_loc = bulletSpawnLocation.transform;

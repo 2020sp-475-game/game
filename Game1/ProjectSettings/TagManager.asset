@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - GameManager
   layers:
   - Default
   - TransparentFX
@@ -17,8 +18,8 @@ TagManager:
   - Enemy Hp Bar
   - Ground
   - Bullet
-  - 
-  - 
+  - Ignore projectile
+  - Flame
   - 
   - 
   - 

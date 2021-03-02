@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class SlimeEnemy : Enemy
 {
-    public float distToPlayer = 3;
+    public float distToPlayer2 = 0;
 
     public override void Move()
     {
-        Transform player_loc = base.Player.transform;
+        // Transform player_loc = base.Player.transform;
         
-        if(Vector2.Distance(player_loc.position, transform.position) > distToPlayer)
-        {
-            transform.position = Vector3.MoveTowards (transform.position, player_loc.position, Time.deltaTime * base.moveSpeed);
-        }
+        // if(Vector2.Distance(player_loc.position, transform.position) > distToPlayer2)
+        // {
+        //     transform.position = Vector3.MoveTowards (transform.position, player_loc.position, Time.deltaTime * base.moveSpeed);
+        // }
     }
 }

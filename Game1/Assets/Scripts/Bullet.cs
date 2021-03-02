@@ -17,7 +17,7 @@ public class Bullet : MonoBehaviour
     {
         GameObject gmobj = collision.gameObject;
 
-        if (!bouncy)
+        if (!bouncy && gmobj.layer != 12)
         {
             if (gmobj.layer == 8) // 8 = Enemies
             {
