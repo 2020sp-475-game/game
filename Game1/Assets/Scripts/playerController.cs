@@ -12,6 +12,7 @@ public class playerController : MonoBehaviour
     public float maxHealth = 100;
     public float currentHealth;
     public bool isDead = false;
+    public GameOverScreen GameOverScreen;
 
     // Public Game Objects
     [HideInInspector]
@@ -52,6 +53,12 @@ public class playerController : MonoBehaviour
 
         if (currentWeapon)
         {
+            // Swap when ammo runs out
+            if (currentWeapon.GetComponent<Weapon>().totalAmmo <= 0)
+            {
+                swapToRandomWeapon ();
+            }
+
             if (Input.GetAxis("Fire1") > 0f)
             {
                 if (currentWeapon.GetComponent<Weapon>())
@@ -61,8 +68,8 @@ public class playerController : MonoBehaviour
                     print("No currentWeapon found");
                 }
             }
-
-            //ammoCount.text = "Ammo: " + currentWeapon.GetComponent<currentWeapon>().roundsInMag;
+        } else {
+            swapToRandomWeapon();
         }
     }
 
@@ -79,20 +86,28 @@ public class playerController : MonoBehaviour
     void Death()
     {
         // Animation or something here
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        GameOverScreen.Setup();
     }
 
     // Updates current health based on damage taken
     public void TakeDamage(float damage)
     {
         currentHealth -= damage;
-        healthBar.SetHealth(currentHealth);
-
         if (currentHealth <= 0)
         {
             isDead = true;
+            currentHealth = 0;
             Death();
         }
+        healthBar.SetHealth(currentHealth);
+    }
+
+    public void addHealth(float amount)
+    {
+        currentHealth += amount;
+        if (currentHealth > maxHealth)
+            currentHealth = maxHealth;
+        healthBar.SetHealth(currentHealth);
     }
 
     void swapToRandomWeapon ()
@@ -100,10 +115,7 @@ public class playerController : MonoBehaviour
         int idx = (int)Random.Range(0, weaponsList.Length);
         Destroy(currentWeapon);
         print(weaponsList[idx].transform.position);
-        GameObject newWeapon = (GameObject) Instantiate(weaponsList[idx], transform.position, transform.rotation);
+        GameObject newWeapon = (GameObject) Instantiate(weaponsList[idx], transform);
         currentWeapon = newWeapon;
-        newWeapon.transform.parent = transform;
-        newWeapon.transform.localPosition = weaponsList[idx].transform.position;
-        //newWeapon.transform.position = new Vector3(0,0,0);
     }
 }

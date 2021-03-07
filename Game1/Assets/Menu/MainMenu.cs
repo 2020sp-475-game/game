@@ -7,7 +7,22 @@ public class MainMenu : MonoBehaviour
 {
     public void PlayGame()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadScene("Assets/Scenes/Game.unity");
+    }
+
+    public void Restart(){
+        SceneManager.LoadScene("Assets/Scenes/Menu.unity");
+        SceneManager.LoadScene("Assets/Scenes/Game.unity");
+    }
+
+    public void Options()
+    {
+        SceneManager.LoadScene("Assets/Scenes/Options.unity");
+    }
+
+    public void Menu()
+    {
+        SceneManager.LoadScene("Assets/Scenes/Menu.unity");
     }
 
     public void QuitGame() 

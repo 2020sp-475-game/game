@@ -98,7 +98,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bouncy: 0
   timeToLive: 6
-  damage: 6
+  damage: 12
 --- !u!50 &2721176090588011972
 Rigidbody2D:
   serializedVersion: 4

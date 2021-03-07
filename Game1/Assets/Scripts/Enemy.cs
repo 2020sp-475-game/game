@@ -37,8 +37,8 @@ public class Enemy : MonoBehaviour
 
     void Update()
     {
+        healthBar.SetHealth(health);
         manageFlip();
-        attackRange();
         if (health <= 0)
         {
             GameManager.GetComponent<GameManager>().enemiesAlive -= 1;
@@ -47,15 +47,11 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    void attackRange ()
-    {
-        Transform player_loc = Player.transform;
-
-        if (Vector2.Distance(transform.position, Player.transform.position) <= distToPlayer)
+    private void OnTriggerStay2D(Collider2D other) {
+        if (canAttack && GameObject.ReferenceEquals (Player, other.gameObject))  
         {
-            if (canAttack)
-                StartCoroutine("damagePlayer");
-        }
+            StartCoroutine("damagePlayer");
+        }     
     }
 
     public IEnumerator damagePlayer ()
@@ -66,10 +62,9 @@ public class Enemy : MonoBehaviour
         canAttack = true;
     }
 
-    public void takeDamage(int damage)
+    public void takeDamage(float damage)
     {
         health -= damage;
-        healthBar.SetHealth(health);
     }
 
     public virtual void Move()

@@ -4,6 +4,13 @@ using UnityEngine;
 
 public class Pistol : Weapon
 {
+    public string pistol = "pistol";
+
+    public override string getWeaponName ()
+    {
+        return pistol;
+    }
+
     public override void _Fire()
     {
         Transform spawn_loc = bulletSpawnLocation.transform;

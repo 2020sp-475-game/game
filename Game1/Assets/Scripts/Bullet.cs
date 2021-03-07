@@ -16,7 +16,7 @@ public class Bullet : MonoBehaviour
     void OnCollisionEnter2D(Collision2D collision)
     {
         GameObject gmobj = collision.gameObject;
-
+        
         if (!bouncy && gmobj.layer != 12)
         {
             if (gmobj.layer == 8) // 8 = Enemies

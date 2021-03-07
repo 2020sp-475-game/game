@@ -5,6 +5,12 @@ using UnityEngine;
 public class Shotgun : Weapon
 {
     public int pelletCount = 5;
+    public string shotgun = "shotgun";
+
+    public override string getWeaponName ()
+    {
+        return shotgun;
+    }
     
     public override void _Fire()
     {

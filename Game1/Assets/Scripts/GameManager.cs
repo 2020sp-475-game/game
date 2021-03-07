@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour
     // public GameObjects
     public GameObject Top, Middle, Bottom, Pink;
     public GameObject greenBlob, greenBlobVar, redBlob;
-    public Text WaveTitle, ScoreTitle;
+    public Text WaveTitle, ScoreTitle, EndScore;
 
     // private primitives
     private float minSpawnDelay = 1f;
@@ -38,6 +38,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Time.timeScale = 1;
         WaveTitle.text = "Wave " + waveNumber;
         ScoreTitle.text = "Score: " + score;
         spawnLimit = 8;
@@ -67,6 +68,7 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         ScoreTitle.text = "Score: " + score;
+        EndScore.text = "Score: " + score;
     }
 
     private IEnumerator Spawner ()
@@ -145,22 +147,32 @@ public class GameManager : MonoBehaviour
     {
         float maxHealth = Blob.GetComponent<SlimeEnemy>().maxHealth;
         float damage = Blob.GetComponent<SlimeEnemy>().damage;
+
         switch (type)
         {
             case "green":
-                maxHealth = maxHealth * 1.3f;
-                damage = damage * 1.5f;
+                if(maxHealth < 250)
+                {
+                    maxHealth = maxHealth * 1.3f;
+                    damage = damage * 1.3f;
+                }
                 break;
             case "var":
-                maxHealth = maxHealth * 1.1f;
-                damage = damage * 1.5f;
+                if(maxHealth < 200)
+                {
+                    maxHealth = maxHealth * 1.25f;
+                    damage = damage * 1.3f;
+                }
                 break;
             case "red":
-                maxHealth = maxHealth * 1.5f;
-                damage = damage * 1.3f;
+                if(maxHealth < 400)
+                {
+                    maxHealth = maxHealth * 1.25f;
+                    damage = damage * 1.25f;
+                }
                 break;
         }
-
+        
         Blob.GetComponent<SlimeEnemy>().maxHealth = maxHealth;
         Blob.GetComponent<SlimeEnemy>().health = maxHealth;
         Blob.GetComponent<SlimeEnemy>().damage = damage;

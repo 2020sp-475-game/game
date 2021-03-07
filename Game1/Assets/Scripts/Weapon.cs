@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Weapon : MonoBehaviour
 {
@@ -11,8 +12,11 @@ public class Weapon : MonoBehaviour
     public float bulletVelocity = 50f;
     public int magCapacity = 12;
     public float accuracy = 20f;
+    public string weaponName;
     [HideInInspector]
     public int roundsInMag = 12;
+    public float reloadTime = 2.5f;
+    public int totalAmmo;
 
     // private variables
     private Camera camera;
@@ -26,11 +30,17 @@ public class Weapon : MonoBehaviour
     {
         camera = Camera.main;
         roundsInMag = magCapacity;
+        totalAmmo = magCapacity * 4;
     }
 
     void Update()
     {
         roundsInMag = magCapacity - shots_fired;
+    }
+
+    public virtual string getWeaponName ()
+    {
+        return "This shouldn't run";
     }
 
     public void Fire()
@@ -42,6 +52,7 @@ public class Weapon : MonoBehaviour
                 _Fire();
                 last_shot = Time.time;
                 shots_fired++;
+                totalAmmo--;           
             } else {
                 if (!reloading) 
                 {
@@ -59,7 +70,7 @@ public class Weapon : MonoBehaviour
 
     IEnumerator Reload()
     {
-        yield return new WaitForSeconds(2.5f);
+        yield return new WaitForSeconds(reloadTime);
         shots_fired = 0;
         reloading = false;
     }

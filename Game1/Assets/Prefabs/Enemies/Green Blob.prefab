@@ -50,7 +50,7 @@ PrefabInstance:
     - target: {fileID: 2534191195465528567, guid: 41405346bfe34d2438b27ebc45cb1ce7,
         type: 3}
       propertyPath: moveSpeed
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2534191195465528567, guid: 41405346bfe34d2438b27ebc45cb1ce7,
         type: 3}
@@ -60,7 +60,7 @@ PrefabInstance:
     - target: {fileID: 2534191195465528567, guid: 41405346bfe34d2438b27ebc45cb1ce7,
         type: 3}
       propertyPath: distToPlayer
-      value: 1.2
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 2534191195465528567, guid: 41405346bfe34d2438b27ebc45cb1ce7,
         type: 3}

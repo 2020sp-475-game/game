@@ -95,13 +95,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e000d6a1db9f8c4b9a8097e114ee272, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 6553991126504993153, guid: b3cd2971caee31f448659c0ac0951978, type: 3}
+  bullet: {fileID: 7189918491594975800, guid: dc9c180333f8b94429767ea909235647, type: 3}
   bulletSpawnLocation: {fileID: 2404198708915778602}
-  shotsPerSecond: 2
+  shotsPerSecond: 3
   bulletVelocity: 50
   magCapacity: 12
   accuracy: 20
   roundsInMag: 12
+  reloadTime: 1.75
+  totalAmmo: 0
 --- !u!1 &2404198708915778602
 GameObject:
   m_ObjectHideFlags: 0

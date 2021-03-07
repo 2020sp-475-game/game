@@ -91,6 +91,7 @@ GameObject:
   - component: {fileID: 4662450845147643877}
   - component: {fileID: -8032894868839928240}
   - component: {fileID: 2514653389565118599}
+  - component: {fileID: 4854512307176535433}
   m_Layer: 8
   m_Name: Red Blob
   m_TagString: Untagged
@@ -239,9 +240,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.13}
+  m_Offset: {x: 0, y: -0.12721893}
   serializedVersion: 2
-  m_Radius: 0.44
+  m_Radius: 0.43721893
 --- !u!114 &4662450845147643877
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -320,6 +321,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 1
   target: {fileID: 7693215888412049077, guid: 30ba22640e270a94ebd595b7e7733446, type: 3}
+--- !u!58 &4854512307176535433
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4049072502403565661}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 1
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.125}
+  serializedVersion: 2
+  m_Radius: 0.87
 --- !u!1 &4412099927531782141
 GameObject:
   m_ObjectHideFlags: 0

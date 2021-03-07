@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5366659628592941515}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.032, y: 0.142, z: 0}
+  m_LocalPosition: {x: 0.003, y: 0.229, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5366659630249527090}
@@ -57,7 +57,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5366659630249527095}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.029177666, y: 0.75541115, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -104,7 +104,7 @@ SpriteRenderer:
   m_SortingLayerID: -651414423
   m_SortingLayer: 3
   m_SortingOrder: 12
-  m_Sprite: {fileID: 21300000, guid: 985eee104bbabcc4db8ea31285613510, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a2d454f50c5075c43aeb0aabc57133ae, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -131,10 +131,13 @@ MonoBehaviour:
   bulletSpawnLocation: {fileID: 5366659628592941515}
   shotsPerSecond: 6
   bulletVelocity: 20
-  magCapacity: 30
+  magCapacity: 25
   accuracy: 20
   roundsInMag: 12
+  reloadTime: 2.5
+  totalAmmo: 0
   flames: {fileID: 193558127839159386}
+  damage: 0.8
 --- !u!198 &193558127839159386
 ParticleSystem:
   m_ObjectHideFlags: 0
@@ -143,13 +146,13 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5366659630249527095}
   serializedVersion: 6
-  lengthInSec: 5
+  lengthInSec: 0.5
   simulationSpeed: 1
   stopAction: 0
   cullingMode: 0
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
-  looping: 1
+  looping: 0
   prewarm: 0
   playOnAwake: 1
   useUnscaledTime: 0
@@ -3727,7 +3730,7 @@ ParticleSystem:
     m_Bounce:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 0.2
       minScalar: 1
       maxCurve:
         serializedVersion: 2

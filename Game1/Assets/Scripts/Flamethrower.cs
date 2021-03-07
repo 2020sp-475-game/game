@@ -5,11 +5,18 @@ using UnityEngine;
 public class Flamethrower : Weapon
 {
     public ParticleSystem flames;
+    public float damage = 0.5f;
+    public string flamethrower = "flamethrower";
 
-    public void Start ()
+    public override string getWeaponName ()
+    {
+        return flamethrower;
+    }
+    
+    public void Awake ()
     {
         flames = GetComponent<ParticleSystem>();
-        flames.Pause();
+        flames.Stop();
     }
 
     public override void _Fire()
@@ -26,13 +33,18 @@ public class Flamethrower : Weapon
 
     void OnParticleCollision(GameObject other)
     {
-        //print("collision");
         if (other.layer != 12)
         {
             if (other.layer == 8) // 8 == Enemies
             {
-                other.GetComponent<Enemy>().takeDamage(1);
+                other.GetComponent<Enemy>().takeDamage(damage);
             }
         }
+    }
+
+    void onDestroy()
+    {
+        flames.Clear();
+        flames.Stop();
     }
 }
