@@ -5,6 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
+
+    public GamePauseScreen GamePauseScreen;
+
     public void PlayGame()
     {
         SceneManager.LoadScene("Assets/Scenes/Game.unity");
@@ -23,6 +26,11 @@ public class MainMenu : MonoBehaviour
     public void Menu()
     {
         SceneManager.LoadScene("Assets/Scenes/Menu.unity");
+    }
+
+    public void Resume()
+    {
+        GamePauseScreen.Resume();
     }
 
     public void QuitGame() 

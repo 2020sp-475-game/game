@@ -13,6 +13,7 @@ public class playerController : MonoBehaviour
     public float currentHealth;
     public bool isDead = false;
     public GameOverScreen GameOverScreen;
+    public GamePauseScreen GamePauseScreen;
 
     // Public Game Objects
     [HideInInspector]
@@ -32,6 +33,7 @@ public class playerController : MonoBehaviour
         healthBar.SetMaxHealth (maxHealth);
         cam = Camera.main;
         rb = GetComponent<Rigidbody2D>();
+        swapToRandomWeapon();
     }
 
     Vector2 movement;   
@@ -43,13 +45,10 @@ public class playerController : MonoBehaviour
         movement.x = Input.GetAxis("Horizontal");
         movement.y = Input.GetAxis("Vertical");
 
+        
+
         // Sets camera to track and stay on character
         mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
-
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            swapToRandomWeapon ();
-        }
 
         if (currentWeapon)
         {
@@ -81,6 +80,11 @@ public class playerController : MonoBehaviour
         Vector2 lookDirection = mousePos - rb.position;
         float angle = Mathf.Atan2(lookDirection.y, lookDirection.x) * Mathf.Rad2Deg - 90f;
         rb.rotation = angle;
+
+        if(Input.GetKey("escape") && isDead == false) 
+        {   
+            GamePauseScreen.Pause();
+        }
     }
 
     void Death()

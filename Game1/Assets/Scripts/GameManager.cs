@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour
     // public GameObjects
     public GameObject Top, Middle, Bottom, Pink;
     public GameObject greenBlob, greenBlobVar, redBlob;
-    public Text WaveTitle, ScoreTitle, EndScore;
+    public Text WaveTitle, ScoreTitle, EndScore, PauseScore;
 
     // private primitives
     private float minSpawnDelay = 1f;
@@ -69,6 +69,7 @@ public class GameManager : MonoBehaviour
     {
         ScoreTitle.text = "Score: " + score;
         EndScore.text = "Score: " + score;
+        PauseScore.text = "Score: " + score;
     }
 
     private IEnumerator Spawner ()
