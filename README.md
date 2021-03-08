@@ -15,6 +15,6 @@ To Play the Game:
   - After downloading, go to extract the zip folder
   - After extracting there will be an application to run.
   - If you have a security popup you will need to do the following:
-    - through terminal cd <PATH_TO_YOUR_APP>/<APP_NAME>.app/Contents/MacOS/
-    - and add the following: chmod -R 777 [applicationName].app
+    - through terminal cd <PATH_TO_YOUR_APP>/
+    - and add the following: chmod -R 755 [applicationName].app
   - Enjoy!!!
